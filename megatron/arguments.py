@@ -910,7 +910,9 @@ def _add_distributed_args(parser):
         help="Use scatter/gather to optimize communication of tensors in pipeline",
         dest="scatter_gather_tensors_in_pipeline",
     )
-    group.add_argument("--local_rank", type=int, default=None, help="local rank passed from distributed launcher.")
+    # group.add_argument("--local_rank", type=int, default=None, help="local rank passed from distributed launcher.")
+    # ! Fixed for local-rank
+    group.add_argument("--local-rank", type=int, default=None, help="local rank passed from distributed launcher.")
     group.add_argument(
         "--lazy-mpu-init",
         type=bool,

@@ -4,3 +4,5 @@ __pycache__
 compile_commands.json
 pyrightconfig.json
 
+# Build files of megatron
+megatron/fused_kernels/build
