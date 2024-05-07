@@ -18,6 +18,7 @@ import math
 from contextlib import nullcontext
 import torch
 import torch.nn.functional as F
+from torch import Tensor
 
 from megatron import get_timers, get_args, get_global_memory_buffer
 from megatron import mpu

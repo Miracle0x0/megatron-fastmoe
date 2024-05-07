@@ -3,6 +3,7 @@ __pycache__
 *.so
 compile_commands.json
 pyrightconfig.json
+.vscode/
 
 # Build files of megatron
 megatron/fused_kernels/build

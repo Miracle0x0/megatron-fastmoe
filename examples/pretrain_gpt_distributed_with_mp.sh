@@ -16,6 +16,7 @@ WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
 DATA_PREFIX=$DATA_PREFIX
 DATA_PATH=$DATA_PREFIX/datasets/meg-gpt2_text_document
 CHECKPOINT_PATH=$DATA_PREFIX/checkpoints/gpt2_fastmoe
+LOG_PATH=$DATA_PREFIX/logs
 VOCAB_FILE=$DATA_PREFIX/gpt2-vocab.json
 MERGE_FILE=$DATA_PREFIX/gpt2-merges.txt
 
@@ -56,4 +57,5 @@ python -m torch.distributed.launch $DISTRIBUTED_ARGS \
        --log-interval 1 \
        --save-interval 10000 \
        --eval-interval 1000 \
-       --eval-iters 10
+       --eval-iters 10 \
+       2>&1 | tee $CHECKPOINT_PATH/megatron_log.txt
