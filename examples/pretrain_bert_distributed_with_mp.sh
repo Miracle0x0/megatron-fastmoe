@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export CUDA_DEVICE_MAX_CONNECTIONS=2
+
 GPUS_PER_NODE=2
 # Change for multinode config
 MASTER_ADDR=localhost
@@ -31,7 +33,7 @@ python -m torch.distributed.launch $DISTRIBUTED_ARGS \
        pretrain_bert.py \
        --tensor-model-parallel-size 1 \
        --pipeline-model-parallel-size 1 \
-       --num-layers 24 \
+       --num-layers 12 \
        --hidden-size 1024 \
        --num-attention-heads 8 \
        --micro-batch-size 4 \

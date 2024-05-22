@@ -2,6 +2,8 @@
 
 # Runs the "345M" parameter model
 
+export CUDA_DEVICE_MAX_CONNECTIONS=2
+
 GPUS_PER_NODE=2
 # Change for multinode config
 MASTER_ADDR=localhost
